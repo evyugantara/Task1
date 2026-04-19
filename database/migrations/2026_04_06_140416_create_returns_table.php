@@ -16,6 +16,7 @@ return new class extends Migration
         $table->unsignedBigInteger('loan_detail_id');
         $table->boolean('charge')->default(false);
         $table->integer('amount')->default(0);
+         $table->timestamps();
 
         $table->foreign('loan_detail_id')->references('id')->on('loan_details')->onDelete('cascade');
 });

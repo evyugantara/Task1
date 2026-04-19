@@ -8,3 +8,9 @@ Route::get('/', function () {
 });
 
 Route::get('/styling', [StylingController::class, 'index']);
+
+use App\Models\User;
+
+Route::get('/test', function () {
+    return User::with('loans.details.returnData')->get();
+});

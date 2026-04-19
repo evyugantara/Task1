@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bookshelfs', function (Blueprint $table) {
-        $table->id();
-        $table->string('code', 10);
-        $table->string('name');
-        $table->timestamps();
-});
+        Schema::create('published_year', function (Blueprint $table) {
+            $table->id();
+            $table->year('published_year')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bookshelfs');
+        Schema::dropIfExists('published_year');
     }
 };
